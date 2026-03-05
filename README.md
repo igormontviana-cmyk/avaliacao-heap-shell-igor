@@ -3,6 +3,8 @@
 # Questão 1 Explicação: O HeapSort tem aquela complexidade $O(n \log n)$ cravada em qualquer cenário porque ele se apoia na estrutura de uma árvore binária completa. Construir o heap inicial leva $O(n)$ e cada vez que a gente tira um elemento (são 'n' extrações), o custo é $O(\log n)$. Como a altura da árvore é matematicamente controlada, ele não tem como "fugir" desse tempo.Por outro lado, o ShellSort é imprevisível porque o desempenho dele está totalmente atrelado à sequência de gaps (intervalos) que a gente escolhe usar (como as de Shell ou Knuth). Dependendo do nível de bagunça do vetor e do gap escolhido, ele pode voar em $O(n \log n)$ ou se arrastar em $O(n^2)$ no pior dos casos.
 
 # Questão 2 Dado o vetor: [30, 12, 45, 6, 18, 3]a) Max-Heap correspondente:[45, 18, 30, 6, 12, 3]b) Vetor após a primeira extração da raiz:[30, 18, 3, 6, 12, 45] (A lógica aqui é que o 45, sendo o maior elemento, vai ordenado lá para o final do vetor. Aí o 30 assume o topo para podermos rodar o Heapify de novo).Nota: Deixei a prova de mesa disso rodando direto no código avaliacao_heapsort.c que subi aqui no repositório.
+<img width="782" height="444" alt="image" src="https://github.com/user-attachments/assets/0b32108a-23c9-4872-8256-9d8469d1d325" />
+
 
 # Questão 3 Resposta: Alternativa correta: A) Apenas II e IVI é falsa: O ShellSort não é estável de jeito nenhum, já que ele dá saltos longos e acaba trocando a ordem relativa de elementos iguais.II é verdadeira: O HeapSort roda todinho em cima do conceito de árvore binária completa.III é falsa: Quem depende da sequência de gaps é o ShellSort, não o Heap.IV é verdadeira: O ShellSort nasceu justamente como uma forma de turbinar o clássico Insertion Sort usando os saltos (gaps).
 
