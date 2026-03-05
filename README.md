@@ -3,11 +3,11 @@
 
 <br>
 
-** Questão 1** **Explicação:** O **HeapSort** tem aquela complexidade O(n log n) cravada em qualquer cenário porque ele se apoia na estrutura de uma árvore binária completa. Construir o heap inicial leva O(n) e cada vez que a gente tira um elemento (são 'n' extrações), o custo é O(log n). Como a altura da árvore é matematicamente controlada, ele não tem como "fugir" desse tempo. 
+ Questão 1 **Explicação:** O **HeapSort** tem aquela complexidade O(n log n) cravada em qualquer cenário porque ele se apoia na estrutura de uma árvore binária completa. Construir o heap inicial leva O(n) e cada vez que a gente tira um elemento (são 'n' extrações), o custo é O(log n). Como a altura da árvore é matematicamente controlada, ele não tem como "fugir" desse tempo. 
 
 Por outro lado, o **ShellSort** é imprevisível porque o desempenho dele está totalmente atrelado à sequência de *gaps* (intervalos) que a gente escolhe usar (como as de Shell ou Knuth). Dependendo do nível de bagunça do vetor e do gap escolhido, ele pode voar em O(n log n) ou se arrastar em O(n²) no pior dos casos.
 
-** Questão 2** **Dado o vetor:** `[30, 12, 45, 6, 18, 3]`
+ Questão 2 **Dado o vetor:** `[30, 12, 45, 6, 18, 3]`
 
 **a) Max-Heap correspondente:** `[45, 18, 30, 6, 12, 3]`
 
@@ -15,14 +15,14 @@ Por outro lado, o **ShellSort** é imprevisível porque o desempenho dele está 
 
 > **Nota:** Deixei a prova de mesa disso rodando direto no código `avaliacao_heapsort.c` que subi aqui no repositório.
 
-** Questão 3** **Resposta:** Alternativa correta: **A) Apenas II e IV** * **I é falsa:** O ShellSort não é estável de jeito nenhum, já que ele dá saltos longos e acaba trocando a ordem relativa de elementos iguais.
+ Questão 3 **Resposta:** Alternativa correta: **A) Apenas II e IV** * **I é falsa:** O ShellSort não é estável de jeito nenhum, já que ele dá saltos longos e acaba trocando a ordem relativa de elementos iguais.
 * **II é verdadeira:** O HeapSort roda todinho em cima do conceito de árvore binária completa.
 * **III é falsa:** Quem depende da sequência de gaps é o ShellSort, não o Heap.
 * **IV é verdadeira:** O ShellSort nasceu justamente como uma forma de turbinar o clássico Insertion Sort usando os saltos (*gaps*).
 
-** Questão 4** **Resposta:** Sem dúvida, o **HeapSort**.  
+ Questão 4 **Resposta:** Sem dúvida, o **HeapSort**.  
 **Justificativa:** Quando a gente fala de milhões de registros, o que mais importa é a **previsibilidade**. O sistema não pode travar do nada. O HeapSort vai garantir um tempo de O(n log n) e um gasto de memória extra de O(1), não importa se os dados chegarem ordenados, de trás pra frente ou uma bagunça total. Usar o ShellSort seria um tiro no pé num cenário desses: se calhar de vir uma base de dados que caia no pior caso dos gaps dele, a performance despenca para O(n²) e o servidor trava.
 
-** Questão 5** **Resposta:** A estrutura Heap é perfeita para criar "Filas de Prioridade" (Priority Queues). Um exemplo clássico disso em grafos é o **Algoritmo de Dijkstra** (usado para achar caminhos mais curtos, como rotas de GPS). 
+ Questão 5 **Resposta:** A estrutura Heap é perfeita para criar "Filas de Prioridade" (Priority Queues). Um exemplo clássico disso em grafos é o **Algoritmo de Dijkstra** (usado para achar caminhos mais curtos, como rotas de GPS). 
 
 Nele, a gente usa um Min-Heap para gerenciar a fila de vértices que precisam ser visitados. A vantagem é que, com o Heap, a gente consegue puxar o próximo vértice mais próximo quase instantaneamente (com custo O(log V)). Se fôssemos usar um vetor comum, o sistema teria que varrer o vetor inteiro toda vez para achar o menor (custo O(V)), o que deixaria o processamento de mapas pesados extremamente lento.
